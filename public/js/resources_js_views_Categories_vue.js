@@ -71,6 +71,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'category',
@@ -201,16 +206,31 @@ var render = function () {
         ]),
       ]),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "card mb-4" }, [
+        _c("div", { staticClass: "card-header d-flex" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary btn-sm ml-auto",
+              on: { click: _vm.showNewCategoryModel },
+            },
+            [_c("span", { staticClass: "fa fa-plus" }), _vm._v("Create New")]
+          ),
+        ]),
+        _vm._v(" "),
+        _vm._m(1),
+      ]),
       _vm._v(" "),
       _c(
         "b-modal",
         {
           ref: "newCategoryModal",
-          attrs: { "hide-footer": "", title: "Using Component Methods" },
+          attrs: { "hide-footer": "", title: "Add new Category" },
         },
         [
-          _c("div", { staticClass: "d-block text-center" }, [
+          _c("div", { staticClass: "d-block" }, [
             _c(
               "form",
               {
@@ -232,8 +252,8 @@ var render = function () {
                       {
                         name: "modal",
                         rawName: "v-modal",
-                        value: _vm.category.name,
-                        expression: "category.name",
+                        value: _vm.categoryData.name,
+                        expression: "categoryData.name",
                       },
                     ],
                     staticClass: "form-control",
@@ -259,21 +279,26 @@ var render = function () {
                 _vm._v(" "),
                 _c("hr"),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-default",
-                    attrs: { type: "button" },
-                    on: { click: _vm.hideNewCategoryModal },
-                  },
-                  [_vm._v("Cancel")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                  [_c("span", { staticClass: "fa fa-check" }), _vm._v("Save")]
-                ),
+                _c("div", { staticClass: "text-right" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-default",
+                      attrs: { type: "button" },
+                      on: { click: _vm.hideNewCategoryModal },
+                    },
+                    [_vm._v("Cancel")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "submit" },
+                    },
+                    [_c("span", { staticClass: "fa fa-check" }), _vm._v("Save")]
+                  ),
+                ]),
               ]
             ),
           ]),
@@ -288,39 +313,44 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card mb-4" }, [
-      _c("div", { staticClass: "card-header" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("table", { staticClass: "table" }, [
-          _c("thead", [
-            _c("tr", [
-              _c("td", [_vm._v("ID")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("Name")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("Image")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("Action")]),
-            ]),
+    return _c("span", [
+      _c("i", { staticClass: "fas fa-chart-area" }),
+      _vm._v("\n                Categories Management\n            "),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("table", { staticClass: "table" }, [
+        _c("thead", [
+          _c("tr", [
+            _c("td", [_vm._v("ID")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("Name")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("Image")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("Action")]),
           ]),
-          _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td", [_vm._v("1")]),
+        ]),
+        _vm._v(" "),
+        _c("tbody", [
+          _c("tr", [
+            _c("td", [_vm._v("1")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("Shirt")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("image")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("button", { staticClass: "btn btn-primary btn-sm" }, [
+                _c("span", { staticClass: "fa fa-edit" }),
+              ]),
               _vm._v(" "),
-              _c("td", [_vm._v("Shirt")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("image")]),
-              _vm._v(" "),
-              _c("td", [
-                _c("button", { staticClass: "btn btn-primary btn-sm" }, [
-                  _c("span", { staticClass: "fa fa-edit" }),
-                ]),
-                _vm._v(" "),
-                _c("button", { staticClass: "btn btn-danger btn-sm" }, [
-                  _c("span", { staticClass: "fa fa-trash" }),
-                ]),
+              _c("button", { staticClass: "btn btn-danger btn-sm" }, [
+                _c("span", { staticClass: "fa fa-trash" }),
               ]),
             ]),
           ]),

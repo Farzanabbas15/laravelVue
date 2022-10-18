@@ -8,8 +8,12 @@
         </ol>
         
         <div class="card mb-4">
-            <div class="card-header">
-                
+            <div class="card-header d-flex">
+                <span>
+                    <i class="fas fa-chart-area"></i>
+                    Categories Management
+                </span>
+                <button class="btn btn-primary btn-sm ml-auto" v-on:click="showNewCategoryModel"><span class="fa fa-plus"></span>Create New</button>
             </div>
             <div class="card-body">
                 <table class="table">
@@ -36,12 +40,12 @@
             </div>
         </div>
 
-        <b-modal ref="newCategoryModal" hide-footer title="Using Component Methods">
-            <div class="d-block text-center">
+        <b-modal ref="newCategoryModal" hide-footer title="Add new Category">
+            <div class="d-block">
                 <form v-on:submit.prevent="createCategory">
                     <div class="form-group">
                         <label for="name">Enter Name</label>
-                        <input type="email" v-modal="category.name" class="form-control" id="name" placeholder="Enter category name ">
+                        <input type="email" v-modal="categoryData.name" class="form-control" id="name" placeholder="Enter category name ">
                     </div>
                     <div class="form-group">
                         <label for="image">Choose an image</label>
@@ -49,9 +53,10 @@
                     </div>
 
                     <hr>
-                    <button type="button" class="btn btn-default" v-on:click="hideNewCategoryModal">Cancel</button>
-                    <button type="submit" class="btn btn-primary"><span class="fa fa-check"></span>Save</button>
-
+                    <div class="text-right">
+                        <button type="button" class="btn btn-default" v-on:click="hideNewCategoryModal">Cancel</button>
+                        <button type="submit" class="btn btn-primary"><span class="fa fa-check"></span>Save</button>
+                    </div>
                 </form>
             </div>
         </b-modal>
